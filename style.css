@@ -62,15 +62,6 @@ body {
   margin: 12px auto;
 }
 
-input.attempts {
-  background-color: var(--button-background);
-  border: 1px solid var(--font-error);
-  color: var(--font-error);
-  font-size: 24px;
-  font-weight: 600;
-  text-align: center;
-}
-
 input {
   margin: 4px;
   padding: 6px;
