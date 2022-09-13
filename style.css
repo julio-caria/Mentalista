@@ -2,15 +2,20 @@
   --body-background: hsl(0, 0%, 7%);
   --grey-color: hsl(0, 0%, 80%);
   --input-background: hsl(0, 0%, 9%);
-  --button-background: hsl(110, 63%, 58%);
-  --result-color: hsl(110, 63%, 58%);
+  --button-background: hsl(0, 63%, 58%);
+  --result-error: hsl(0, 63%, 58%);
+  --font-error: hsl(0, 57%, 45%);
+  --result-correct: hsl(86, 63%, 58%);
+  --font-correct: hsl(93, 57%, 45%);
+  --tip-color: hsl(64, 78%, 69%);
+  --tip-font: hsl(64, 59%, 53%);
   --white-color: hsl(0, 0%, 100%);
 }
 
 body {
   font-family: "Roboto Mono", monospace;
   min-height: 600px;
-  background-image: url("https://www.alura.com.br/assets/img/imersoes/dev-2021/dia-03-mentalista.png");
+  background-image: url("./wallpaper.jpg"); /* https://imgs.search.brave.com/kZUzhOc8tr5Hvr3HNoJyk99B3A24qVTVn3bvOBqJDeg/rs:fit:1200:974:1/g:ce/aHR0cDovL3dhbGxw/YXBlcmNhdmUuY29t/L3dwL3dwMTgzOTU4/MS5qcGc */
   background-color: #000000;
   background-size: cover;
   background-position: center bottom;
@@ -50,21 +55,93 @@ body {
   }
 }
 
+.tentativas {
+  color: var(--white-color);
+  font-weight: 600;
+  width: 15%;
+  margin: 12px auto;
+}
+
+input.attempts {
+  background-color: var(--button-background);
+  border: 1px solid var(--font-error);
+  color: var(--font-error);
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+}
+
 input {
   margin: 4px;
   padding: 6px;
-  border-radius: 5px;
+
+  background: var(--input-background);
+  color: var(--grey-color);
+
+  border: none;
+  border-bottom: 1px solid var(--grey-color);
+
+  width: 20%;
+  height: 20px;
 }
 
 button {
-  margin-top: 12px;
   padding: 4px 8px;
-  border-radius: 10px;
-  background: #ffffff;
+  border: 2px solid var(--button-background);
+  color: var(--white-color);
+
+  background: transparent;
+
+  width: 5%;
+  height: 32px;
+
+  cursor: pointer;
+  transition: 0.4s ease;
+
+  font-weight: 600;
 }
 
-.resultado {
-  color: #ffffff;
+button:hover {
+  background-color: var(--button-background);
+  color: black;
+}
+
+.resposta-certa {
+  color: var(--font-correct);
   text-align: center;
+  font-weight: 600;
+
+  border: 1px solid var(--font-correct);
   margin-top: 16px;
+  padding: 12px;
+
+  background-color: var(--result-correct);
+  width: 30%;
+  margin-inline: auto;
+}
+
+.resposta-errada {
+  color: var(--font-error);
+  text-align: center;
+  font-weight: 600;
+
+  border: 1px solid var(--font-error);
+  margin-top: 16px;
+  padding: 12px;
+
+  background-color: var(--result-error);
+  width: 30%;
+  margin-inline: auto;
+}
+
+.tip {
+  color: var(--tip-font);
+  text-align: center;
+
+  border: 1px solid var(--tip-color);
+  background: var(--tip-color);
+
+  font-weight: 600;
+  width: 15%;
+  margin: 12px auto;
 }

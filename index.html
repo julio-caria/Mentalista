@@ -16,9 +16,11 @@
         alt=""
       /><br />
       <p class="page-subtitle">Digite um número de 0 a 10</p>
-      <input type="number" id="valor" /><br />
-      <button type="submit" onclick="Chutar()">Chutar</button>
-      <h2 class="resultado" id="resultado"></h2>
+      <p class="tentativas">Você tem 3 tentativas</p>
+      <p id="tip"></p>
+      <input type="number" id="valor" placeholder="Insira o número..." />
+      <button type="submit" onclick="SortNumber()">Chutar</button>
+      <p class="resposta" id="resultado"></p>
     </div>
     <a href="https://alura.com.br/" target="_blank">
       <img
